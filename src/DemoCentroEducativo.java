@@ -1,6 +1,7 @@
 import java.time.LocalDate;
 import java.util.ArrayList;
 
+
 public class DemoCentroEducativo {
     public static void main(String[] args) {
         Profesor profesor1 = new Profesor("Pascual", "Ramirez", "20324323S", LocalDate.parse("2022-02-02"), 2000, "Ciencias", 20);
@@ -18,18 +19,18 @@ public class DemoCentroEducativo {
         chomon.anadirTrabajadores(profesor2);
         chomon.anadirTrabajadores(personalAdministrativo2);
         // Salario medio
-        System.out.println("--------- Salario medio ---------");
+        System.out.println("Salario medio");
         System.out.println(chomon.salarioMedio());
         // Trabajador con más antiguedad
-        System.out.println("--------- Más antiguo ---------");
+        System.out.println("Más antiguo");
         System.out.println(chomon.trabajadorMasAntiguo());
         // Busco un trabajador
-        System.out.println("--------- Buscar ---------");
+        System.out.println("Buscar");
         for (Trabajador i : chomon.buscarTrabajadores("Tipo", "Personal administrativo")){
             System.out.print(i.toString());
         }
         // Muestro el trabajar
-        System.out.println("--------- Trabajar ---------");
+        System.out.println("Trabajar");
         System.out.println(profesor1.trabajar());
         System.out.println(personalAdministrativo1.trabajar());
     }
