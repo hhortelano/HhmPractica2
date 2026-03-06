@@ -1,14 +1,10 @@
 import java.util.ArrayList;
-import java.util.Scanner;
 
 public class CentroEducativo {
-    private ArrayList<Trabajador> centro;
+    private final ArrayList<Trabajador> centro;
 
-    //Constructores
+    //Creamos los constructores
 
-    public CentroEducativo() {
-        centro = new ArrayList<>();
-    }
 
     public CentroEducativo(ArrayList<Trabajador> centro) {
         this.centro = centro;
@@ -19,7 +15,7 @@ public class CentroEducativo {
         centro.add(trabajador);
     }
 
-    // Muestro todos los trabajadores
+    // Muestrar todos los trabajadores
     void mostrarTrabajadores(){
         for (Trabajador i : centro){
             if (i instanceof Profesor){
