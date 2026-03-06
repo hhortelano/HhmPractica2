@@ -1,0 +1,36 @@
+import java.time.LocalDate;
+import java.util.ArrayList;
+
+public class DemoCentroEducativo {
+    public static void main(String[] args) {
+        Profesor profesor1 = new Profesor("Pascual", "Ramirez", "20324323S", LocalDate.parse("2022-02-02"), 2000, "Ciencias", 20);
+        Profesor profesor2 = new Profesor("Alberto", "Pascualez", "32313131231", LocalDate.parse("2020-06-11"), 3000, "Electronica", 30);
+        PersonalAdministrativo personalAdministrativo1 = new PersonalAdministrativo("Hector", "Criado", "42452432", LocalDate.parse("2010-06-11"), 2500, "Arte", 2);
+        PersonalAdministrativo personalAdministrativo2 = new PersonalAdministrativo("Juanma", "Lozano", "49234234", LocalDate.parse("2024-06-11"), 1500, "Cocina", 1);
+        // Hago un array provisional
+        ArrayList<Trabajador> provisional = new ArrayList<>();
+        provisional.add(profesor1);
+        provisional.add(personalAdministrativo1);
+        // Creo un centro con el array provisional
+        CentroEducativo chomon = new CentroEducativo(provisional);
+        // Muestro el array y añado al resto
+        chomon.mostrarTrabajadores();
+        chomon.anadirTrabajadores(profesor2);
+        chomon.anadirTrabajadores(personalAdministrativo2);
+        // Salario medio
+        System.out.println("--------- Salario medio ---------");
+        System.out.println(chomon.salarioMedio());
+        // Trabajador con más antiguedad
+        System.out.println("--------- Más antiguo ---------");
+        System.out.println(chomon.trabajadorMasAntiguo());
+        // Busco un trabajador
+        System.out.println("--------- Buscar ---------");
+        for (Trabajador i : chomon.buscarTrabajadores("Tipo", "Personal administrativo")){
+            System.out.print(i.toString());
+        }
+        // Muestro el trabajar
+        System.out.println("--------- Trabajar ---------");
+        System.out.println(profesor1.trabajar());
+        System.out.println(personalAdministrativo1.trabajar());
+    }
+}
